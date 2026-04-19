@@ -1,0 +1,48 @@
+## Interface: 30300
+## Title: DankWoW Playerbots
+## Notes: The definitive playerbot command interface for the DankWoW server.
+## Author: DankWoW
+## Version: 0.8.1
+## SavedVariables: DankWoWPlayerbotsDB
+## SavedVariablesPerCharacter: DankWoWPlayerbotsCharDB
+## OptionalDeps: Ace3, LibStub, CallbackHandler-1.0, LibSharedMedia-3.0
+## X-Category: Interface Enhancements
+## X-Website: https://dankwow.com
+## X-License: All Rights Reserved
+
+# Libraries are loaded first from embeds.xml (keeps the TOC clean).
+embeds.xml
+
+# Core — constants first (creates the DankWoWPlayerbots namespace used by everything).
+Core\Constants.lua
+
+# Locales — string tables. enUS is the fallback; other locales overlay.
+Locales\enUS.lua
+
+# Core continued — styling, config, comms, roster, and lifecycle.
+Core\Skin.lua
+Core\Config.lua
+Core\Comm.lua
+Core\Presets.lua
+Core\BotRoster.lua
+Core\BotManager.lua
+Core\Core.lua
+
+# UI — main panel, portraits, command bar.
+# Load leaf components before the composite frame that uses them.
+UI\CommandBar.lua
+UI\StrategyPanel.lua
+UI\BotPortrait.lua
+UI\BotManagerFrame.lua
+UI\OptionsPanel.lua
+UI\ActionBar.lua
+UI\MainFrame.lua
+UI\MinimapButton.lua
+# UI\RTSC.lua              -- milestone 8
+
+# Modules — feature-specific logic.
+# (Commented out until their milestone; keeps the TOC load-order stable.)
+# Modules\Altbot.lua       -- milestone 6
+# Modules\Rndbot.lua       -- milestone 7
+# Modules\Combat.lua       -- milestone 5
+# Modules\Gear.lua         -- milestone 6
